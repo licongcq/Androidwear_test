@@ -1,6 +1,9 @@
 package com.example.cong.beginner;
 
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
@@ -31,5 +34,11 @@ public class MainActivity extends Activity {
     public void stopService(View view) {
         Intent intent = new Intent(this, MyService.class);
         stopService(intent);
+    }
+    public void issueNoti(View view) {
+
+
+        TextView textView = (TextView)findViewById(R.id.textView);
+        textView.setText("Button hit");
     }
 }

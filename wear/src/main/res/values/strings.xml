@@ -7,4 +7,8 @@
 
     <string name="startButtonText">Start</string>
     <string name="stopButtonText">Stop</string>
+    <string name="title_activity_notification">NotificationActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 </resources>

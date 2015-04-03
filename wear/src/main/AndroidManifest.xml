@@ -24,6 +24,15 @@
             android:enabled="true"
             android:exported="true" >
         </service>
+
+        <activity
+            android:name=".NotificationActivity"
+            android:label="@string/title_activity_notification"
+            android:exported="true"
+            android:allowEmbedded="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.DeviceDefault.Light">
+        </activity>
     </application>
 
 </manifest>
