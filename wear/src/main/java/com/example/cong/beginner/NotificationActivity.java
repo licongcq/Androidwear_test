@@ -1,9 +1,12 @@
 package com.example.cong.beginner;
 
 import android.app.Activity;
+import android.app.NotificationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class NotificationActivity extends Activity {
@@ -36,4 +39,17 @@ public class NotificationActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void modifyNoti(View view) {
+        MyService.baseNotificationBuilder.setContentText("Test Content Text Modified");
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(2, MyService.baseNotificationBuilder.build());
+    }
+
+    public void modifyText(View view) {
+        TextView textView = (TextView)findViewById(R.id.textView2);
+        textView.setText("Button hit");
+    }
+
 }

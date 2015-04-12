@@ -30,12 +30,16 @@ public class MainActivity extends Activity {
     }
 
     public void startService(View view) {
-        Intent intent = new Intent(this, MyService.class);
-        startService(intent);
+        if (MyService.started == 0) {
+            Intent intent = new Intent(this, MyService.class);
+            MyService.started = 1;
+            startService(intent);
+        }
     }
     public void stopService(View view) {
         Intent intent = new Intent(this, MyService.class);
         stopService(intent);
+        MyService.started = 0;
     }
     public void issueNoti(View view) {
         Intent intent = new Intent(this, NotificationActivity.class);

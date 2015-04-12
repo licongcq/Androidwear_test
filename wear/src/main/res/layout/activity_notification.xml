@@ -8,10 +8,37 @@
     android:gravity="center_vertical|center|center_horizontal">
 
 
-    <TextView android:text="New Notification!" android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+
+        <TextView android:text="New Notification!" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:layout_gravity="center"
+            android:gravity="center" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modify Notifi"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal"
+            android:onClick="modifyNoti"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modify Text"
+            android:id="@+id/button2"
+            android:layout_gravity="center_horizontal"
+            android:onClick="modifyText"/>
+
+    </LinearLayout>
 
 
 </RelativeLayout>
