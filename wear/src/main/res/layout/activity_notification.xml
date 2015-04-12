@@ -1,17 +1,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:paddingLeft="@dimen/card_content_padding_rect_top"
+    android:paddingRight="@dimen/card_content_padding_rect_top"
+    android:paddingTop="@dimen/card_content_padding_rect_top"
+    android:paddingBottom="@dimen/card_content_padding_rect_top"
     tools:context="com.example.cong.beginner.NotificationActivity"
     android:gravity="center_vertical|center|center_horizontal">
 
+
     <TextView android:text="New Notification!" android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="false"
-        android:layout_alignParentLeft="false"
         android:layout_gravity="center"
         android:gravity="center" />
+
 
 </RelativeLayout>

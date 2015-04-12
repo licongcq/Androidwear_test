@@ -41,17 +41,29 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, NotificationActivity.class);
         PendingIntent notificationPendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        Notification notification = new NotificationCompat.Builder(this)
-                .extend(new NotificationCompat.WearableExtender()
+
+
+        Notification notification = new Notification.Builder(this)
+                .extend(new Notification.WearableExtender()
                         .setDisplayIntent(notificationPendingIntent)
-                        .setCustomSizePreset(Notification.WearableExtender.SIZE_MEDIUM))
+                        .setCustomSizePreset(Notification.WearableExtender.SIZE_FULL_SCREEN))
                 .setSmallIcon(R.drawable.common_signin_btn_icon_focus_dark)
                 .setContentText("Test Content Text")
                 .setContentTitle("Test Content Title")
                 .build();
 
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        notificationManager.notify(1, notification);
+        Notification baseNotification =  new Notification.Builder(this)
+                .extend(new Notification.WearableExtender()
+                        .addPage(notification))
+                .setSmallIcon(R.drawable.common_signin_btn_icon_focus_dark)
+//                .setContentText("Test Content Text Base")
+//                .setContentTitle("Test Content Title")
+                .build();
+/*        smallIcon is a must to issue a notification, content text and title are not*/
+
+//        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(1, baseNotification);
 
         TextView textView = (TextView)findViewById(R.id.textView);
         textView.setText("Button hit");
